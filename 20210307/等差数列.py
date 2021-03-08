@@ -1,0 +1,1 @@
+def arith_seq(first_number, last_number, )
