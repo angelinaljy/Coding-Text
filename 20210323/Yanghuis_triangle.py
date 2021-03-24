@@ -17,32 +17,18 @@ def number(line, order):
 
 
 def yanghuis_triangle(n):
+    number_width = (len(str(number(n,n//2))))
+
     for line in range(1,n+1):
-        print(" " * (n - line), end="")
+        print(" " * number_width * (n - line), end="")
 
         for order in range(1,line+1):
             if order != line:
-                print(str(number(line, order)), end=" ")
+                print(f"{number(line, order):^{number_width}}", end=" "*(number_width))
             else:
-                print(str(number(line, order)))
-
-
-            # if line_n == 1:
-            #     print("1 ", end="")
-            #
-            # else:
-            #     if num_m == 1:
-            #         print("1 ", end="")
-            #     else:
-            #         num_a = fac(line_n-1)
-            #         num_b = fac(line_n-num_m-2)
-            #         num_c = fac(num_m-1)
-            #         the_number = num_a//(num_b*num_c)
-            #         print(f"{the_number} ", end="")
-
+                print(f"{number(line, order):^{number_width}}")
 
 
 if __name__=="__main__":
 
-    yanghuis_triangle(10)
-
+    yanghuis_triangle(15)
