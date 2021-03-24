@@ -13,7 +13,7 @@ def triangle(n):
 
 if __name__=="__main__":
     triangle(5)
-    triangle(50)
+    triangle(10)
 
 
 
