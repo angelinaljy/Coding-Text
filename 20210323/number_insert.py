@@ -9,7 +9,7 @@ def number_insert(list_numbers, number_inputted):
         return list_numbers
     else:
         for num in range(0, len(list_numbers)):
-            if number_inputted >= list_numbers[num] and number_inputted < list_numbers[num + 1]:
+            if list_numbers[num] <= number_inputted < list_numbers[num + 1]:
                 list_numbers.insert(num + 1, number_inputted)
                 return list_numbers
 
