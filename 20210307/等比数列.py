@@ -8,4 +8,5 @@ def geometric_progression(first_number, last_number, common_ratio):
             return list_gp
             break
 
-print(geometric_progression(1,10,2))
+
+print(geometric_progression(1, 10, 2))

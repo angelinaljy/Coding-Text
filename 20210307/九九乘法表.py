@@ -11,10 +11,9 @@
 #         b += 1
 #         continue
 
-for b in range(1,10):
-    for a in range(1,b+1):
-        print(f"{a}*{b}={a*b}", end=" ")
+for b in range(1, 10):
+    for a in range(1, b + 1):
+        print(f"{a}*{b}={a * b}", end=" ")
     if b < 9:
         print()
-    #print(end="\n" if b<9 else "")
-
+    # print(end="\n" if b<9 else "")

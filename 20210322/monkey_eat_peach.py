@@ -10,7 +10,7 @@ def amount_peach(n):
     if n == 1:
         return 1
     else:
-        return (amount_peach(n-1)+1)*2
+        return (amount_peach(n - 1) + 1) * 2
 
 
 print(amount_peach(10))

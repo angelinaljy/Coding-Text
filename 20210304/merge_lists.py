@@ -1,9 +1,8 @@
 def merge(L1, L2):
-
     if L1 is None or len(L1) == 0:
         X = L2
         return X
-    elif L2 is None or  len(L2) == 0:
+    elif L2 is None or len(L2) == 0:
         X = L1
         return X
 
@@ -16,12 +15,12 @@ def merge(L1, L2):
         while True:
             if L1[a] >= L2[b]:
                 X.append(L2[b])
-                if b < len(L2)-1:
+                if b < len(L2) - 1:
                     b += 1
                     continue
                 else:
                     while True:
-                        if a < len(L1)-1:
+                        if a < len(L1) - 1:
                             X.append(L1[a])
                             a += 1
 
@@ -32,12 +31,12 @@ def merge(L1, L2):
                 break
             else:
                 X.append(L1[a])
-                if a < len(L1)-1:
+                if a < len(L1) - 1:
                     a += 1
                     continue
                 else:
                     while True:
-                        if b < len(L2)-1:
+                        if b < len(L2) - 1:
                             X.append(L2[b])
                             b += 1
                         else:
@@ -46,9 +45,10 @@ def merge(L1, L2):
                             break
                 break
 
-if __name__=="__main__":
-    L1 = [1,2,3,4,9,10]
-    L2 = [1,2,2,2,11,13]
 
-    res=merge(L1, L2)
+if __name__ == "__main__":
+    L1 = [1, 2, 3, 4, 9, 10]
+    L2 = [1, 2, 2, 2, 11, 13]
+
+    res = merge(L1, L2)
     print(res)
