@@ -4,7 +4,7 @@
 #     else:
 #         return n*fac(n-1)
 
-#方法二：使用递归
+# 方法二：使用递归
 # def number(line, order):
 #     if order == 1:
 #         the_number = 1
@@ -30,12 +30,12 @@
 #                 print(f"{number(line, order):^{number_width}}")
 
 
-#第三种方法：
+# 第三种方法：
 def yanghuis_triangle(n):
     number_width = 5
 
     the_old_list = []
-    for line in range(1, n+1):
+    for line in range(1, n + 1):
         print(" " * number_width * (n - line), end="")
 
         the_new_list = []
@@ -46,16 +46,15 @@ def yanghuis_triangle(n):
             elif order == 0:
                 the_new_list.append(1)
                 print(f"{the_new_list[order]:^{number_width}}", end=" " * number_width)
-            elif order < line-1:
-                the_number = the_old_list[order-1]+the_old_list[order]
+            elif order < line - 1:
+                the_number = the_old_list[order - 1] + the_old_list[order]
                 the_new_list.append(the_number)
                 print(f"{the_new_list[order]:^{number_width}}", end=" " * number_width)
-            elif order == line-1:
+            elif order == line - 1:
                 the_new_list.append(1)
                 print(f"{the_new_list[order]:^{number_width}}")
         the_old_list = the_new_list
 
 
-if __name__=="__main__":
-
+if __name__ == "__main__":
     yanghuis_triangle(15)
