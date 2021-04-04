@@ -1,5 +1,6 @@
 # 用字典存储一个班的学生信息（学号，姓名，性别，年龄，总分等），统计本班学生年龄最小的/最大的、分数最高的/最低的学生的信息，并输出到控制台；请求出男生的平均年龄、平均分；女生的平均年龄平均分；请求出本班的平均年龄、平均分。
 
+# 班级学生信息的统计：
 student_01 = {"student_id": 202101, "name": "Angelina", "Gender": "Female", "Age":18, "Scores": 120}
 student_02 = {"student_id": 202102, "name": "Bobby",    "Gender": "Male",   "Age":25, "Scores": 98 }
 student_03 = {"student_id": 202103, "name": "Cindy",    "Gender": "Female", "Age":28, "Scores": 110}
@@ -10,7 +11,7 @@ student_06 = {"student_id": 202106, "name": "Flora",    "Gender": "Female", "Age
 class_01 = {"student_01": student_01, "student_02": student_02, "student_03":student_03, "student_04": student_04, "student_05": student_05,
             "student_06": student_06}
 # 生成年纪的统计列表
-def get_age():
+def get_age_list():
     age = []
     for std_info in class_01.values():
         for key in std_info.keys():
@@ -19,7 +20,7 @@ def get_age():
     return age
 
 # 生成分数统计列表
-def get_scores():
+def get_scores_list():
     scores = []
     for std_info in class_01.values():
         for key in std_info.keys():
@@ -59,50 +60,50 @@ def get_female_scores():
             female_scores.append(std_info["Scores"])
     return female_scores
 
-# 统计本班年纪最小/最大的年纪的学生信息：
+# 统计本班年纪最大的年纪的学生信息：
 def get_max_age_stds():
     max_age_stds = {}
     for std_number, std_details in class_01.items():
         for key in std_details.keys():
-            if std_details[key] == max(get_age()):
+            if std_details[key] == max(get_age_list()):
                 max_age_stds[std_number] = std_details
     print(f"The oldest student's info as below: {max_age_stds}")
 
-
+# 统计本班年纪最小的年纪的学生信息：
 def get_min_age_stds():
     min_age_stds = {}
     for std_number, std_details in class_01.items():
         for key in std_details.keys():
-            if std_details[key] == min(get_age()):
+            if std_details[key] == min(get_age_list()):
                 min_age_stds[std_number] = std_details
     print(f"The youngest student's info as below: {min_age_stds}")
 
 # 全班平均年龄
 def get_class_age_avg():
-    class_age_avg = sum(get_age()) / len(get_age())
+    class_age_avg = sum(get_age_list()) / len(get_age_list())
     print(f"The average age of the class is: {class_age_avg:.4}")
 
-# 统计分数最高/最低的学生信息：
+# 统计分数最低的学生信息：
 def get_min_score_stds():
     min_score_stds = {}
     for std_number, std_details in class_01.items():
         for key in std_details.keys():
-            if std_details[key] == min(get_scores()):
+            if std_details[key] == min(get_scores_list()):
                 min_score_stds[std_number] = std_details
     print(f"The info of student who got the lowest score as below: {min_score_stds}")
 
-
+# 统计分数最高的学生信息：
 def get_max_score_stds():
     max_score_stds = {}
     for std_number, std_details in class_01.items():
         for key in std_details.keys():
-            if std_details[key] == max(get_scores()):
+            if std_details[key] == max(get_scores_list()):
                 max_score_stds[std_number] = std_details
     print(f"The info of student who got the highest score as below: {max_score_stds}")
 
 # 全班平均分
 def get_class_scores_avg():
-    class_scores_avg = sum(get_scores()) / len(get_scores())
+    class_scores_avg = sum(get_scores_list()) / len(get_scores_list())
     print(f"The average score of the class: {class_scores_avg:.5}")
 
 # 男生平均年龄
