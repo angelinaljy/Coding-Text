@@ -83,12 +83,19 @@ def get_max_age_stds():
 
 # 统计本班年纪最小的年纪的学生信息：
 def get_min_age_stds():
-    min_age_stds = {}
-    for std_number, std_details in class_01.items():
-        for key in std_details.keys():
-            if std_details[key] == min(get_age_list()):
-                min_age_stds[std_number] = std_details
-    print(f"The youngest student's info as below: {min_age_stds}")
+    # min_age_stds = {}
+    # for std_number, std_details in class_01.items():
+    #    for key in std_details.keys():
+    #        if std_details[key] == min(get_age_list()):
+    #            min_age_stds[std_number] = std_details
+    # print(f"The youngest student's info as below: {min_age_stds}")
+    youngest = None
+    age = 10000
+    for item in class_01.values(): # 使用for遍历所有的学生信息，然后比较年龄，并把最小的那个学生的信息存储在youngest变量中,也有更简单的办法
+        if item.get("Age") < age:
+            youngest = item
+            age = item.get("Age")
+    print(f"The youngest student's info as below: {youngest}")
 
 
 # 全班平均年龄
