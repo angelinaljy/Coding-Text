@@ -1,3 +1,4 @@
+import sys
 # 用字典存储一个班的学生信息（学号，姓名，性别，年龄，总分等），统计本班学生年龄最小的/最大的、分数最高的/最低的学生的信息，并输出到控制台；请求出男生的平均年龄、平均分；女生的平均年龄平均分；请求出本班的平均年龄、平均分。
 
 # 班级学生信息的统计：
@@ -90,7 +91,7 @@ def get_min_age_stds():
     #            min_age_stds[std_number] = std_details
     # print(f"The youngest student's info as below: {min_age_stds}")
     youngest = None
-    age = 10000
+    age = sys.maxsize
     for item in class_01.values(): # 使用for遍历所有的学生信息，然后比较年龄，并把最小的那个学生的信息存储在youngest变量中,也有更简单的办法
         if item.get("Age") < age:
             youngest = item
