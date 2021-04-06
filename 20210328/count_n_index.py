@@ -23,4 +23,6 @@ def count_n_index():
 if __name__ == "__main__":
     count_n_index()
 
+# 较短的是字符串 而不是 字符
+
 
