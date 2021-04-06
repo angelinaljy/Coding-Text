@@ -85,9 +85,9 @@ def get_max_age_stds():
     print(f"\nThe oldest student's info as below:")
     for std_number, std_details in class_01.items():
         if std_details.get("Age") == max(get_age_list()):
-            print(std_number)
+            print(f"\t{std_number}")
             for k, v in std_details.items():
-                print(f"\t{k}:{v}")
+                print(f"\t\t{k}:{v}")
 
 
 # 统计本班年纪最小的年纪的学生信息：
@@ -95,9 +95,9 @@ def get_min_age_stds():
     print(f"\nThe youngest student's info as below:")
     for std_number, std_details in class_01.items():
         if std_details.get("Age") == min(get_age_list()):
-            print(std_number)
+            print(f"\t{std_number}")
             for k, v in std_details.items():
-                print(f"\t{k}:{v}")
+                print(f"\t\t{k}:{v}")
 
 
 # 全班平均年龄
@@ -111,9 +111,9 @@ def get_min_score_stds():
     print(f"\nThe info of student who got the lowest score as below:")
     for std_number, std_details in class_01.items():
         if std_details.get("Scores") == min(get_scores_list()):
-            print(std_number)
+            print(f"\t{std_number}")
             for k, v in std_details.items():
-                print(f"\t{k}:{v}")
+                print(f"\t\t{k}:{v}")
 
 
 
@@ -122,9 +122,9 @@ def get_max_score_stds():
     print(f"\nThe info of student who got the highest score as below:")
     for std_number, std_details in class_01.items():
         if std_details.get("Scores") == max(get_scores_list()):
-            print(std_number)
+            print(f"\t{std_number}")
             for k, v in std_details.items():
-                print(f"\t{k}:{v}")
+                print(f"\t\t{k}:{v}")
 
 
 # 全班平均分
