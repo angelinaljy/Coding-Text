@@ -12,3 +12,7 @@ def input_quit():
 
 if __name__ == "__main__":
     input_quit()
+
+
+
+# 需要依次输入 quit 可以形成退出
